@@ -174,12 +174,11 @@ class _ChooseBedDialogNoRRGState extends State<ChooseBedDialogNoRRG> {
             height: 45,
             width: 100,
             margin: const EdgeInsets.symmetric(horizontal: 5),
-            handleTap: () => roomMatched && occupancyMatched
-                ? _onSubmit(
-                    context,
-                    _roomNumberController.text,
-                  )
-                : {},
+            handleTap: roomMatched && occupancyMatched
+                ? () {
+                    _onSubmit(context, _roomNumberController.text);
+                  }
+                : () {},
           ),
         ],
       ),
