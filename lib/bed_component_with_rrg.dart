@@ -135,12 +135,14 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
           GeneralButton(
             buttonText: 'Submit',
             borderRadius: 25,
-            buttonColor: roomMatched ? ColorConstants.red : Colors.grey,
+            buttonColor: roomMatched && occupancyMatched
+                ? ColorConstants.red
+                : Colors.grey,
             fontSize: AppConstants.fontRequestButtonMaximizedAccepted,
             height: 45,
             width: 100,
             margin: const EdgeInsets.symmetric(horizontal: 5),
-            handleTap: () => roomMatched
+            handleTap: () => roomMatched && occupancyMatched
                 ? _onSubmit(
                     context,
                     _roomNumberController.text,

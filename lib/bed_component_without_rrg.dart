@@ -167,7 +167,7 @@ class _ChooseBedDialogNoRRGState extends State<ChooseBedDialogNoRRG> {
             buttonText: 'Submit',
             textColor: Colors.white,
             borderRadius: 25,
-            buttonColor: roomMatched
+            buttonColor: roomMatched && occupancyMatched
                 ? widget.roomMatchedColor ?? Colors.red
                 : Colors.grey,
             fontSize: 16,
