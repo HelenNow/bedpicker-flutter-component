@@ -1,3 +1,8 @@
+## 1.0.5
+
+- `helen bed component`
+- `fixing submit function`
+
 ## 1.0.4
 
 - `helen bed component`
