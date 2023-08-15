@@ -9,7 +9,7 @@ class ChooseBedDialogNoRRG extends StatefulWidget {
   final List<Bed>? beds;
   final Map<String, ModelRoom>? rooms;
 
-  final Function onSubmit;
+  final dynamic onSubmit;
   final bool subgroups;
   final bool group;
   final bool here;
@@ -133,12 +133,6 @@ class _ChooseBedDialogNoRRGState extends State<ChooseBedDialogNoRRG> {
   String rrg = '';
   String rbrg = '';
   String bedName = '';
-  void _onSubmit(
-    BuildContext context,
-    String roomNumber,
-  ) async {
-    widget.onSubmit();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -167,7 +161,7 @@ class _ChooseBedDialogNoRRGState extends State<ChooseBedDialogNoRRG> {
             buttonText: 'Submit',
             textColor: Colors.white,
             borderRadius: 25,
-            buttonColor: roomMatched && occupancyMatched
+            buttonColor: roomMatched
                 ? widget.roomMatchedColor ?? Colors.red
                 : Colors.grey,
             fontSize: 16,
@@ -175,10 +169,11 @@ class _ChooseBedDialogNoRRGState extends State<ChooseBedDialogNoRRG> {
             width: 100,
             margin: const EdgeInsets.symmetric(horizontal: 5),
             handleTap: roomMatched && occupancyMatched
-                ? () {
-                    _onSubmit(context, _roomNumberController.text);
-                  }
-                : () {},
+                ? () => widget.onSubmit(
+                      bedName,
+                      rbrg,
+                    )
+                : () => print("testing"),
           ),
         ],
       ),
