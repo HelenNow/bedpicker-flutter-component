@@ -173,7 +173,7 @@ class _ChooseBedDialogNoRRGState extends State<ChooseBedDialogNoRRG> {
                       bedName,
                       rbrg,
                     )
-                : () => print("testing"),
+                : () {},
           ),
         ],
       ),
