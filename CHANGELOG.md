@@ -1,3 +1,8 @@
+## 1.0.8
+
+- `helen bed component`
+- `github actions3`
+
 ## 1.0.7
 
 - `helen bed component`
