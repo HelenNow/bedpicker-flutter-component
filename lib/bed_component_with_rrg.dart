@@ -69,10 +69,12 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
             rrg = room.rrg ?? '';
           }
         } else {
-          setState(() {
-            occupancyMatched = true;
-            rrg = room.rrg ?? '';
-          });
+          if (_occupancyController.text.isNotEmpty) {
+            setState(() {
+              occupancyMatched = true;
+              rrg = room.rrg ?? '';
+            });
+          }
         }
       }
     }
@@ -137,14 +139,18 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
           GeneralButton(
             buttonText: 'Submit',
             borderRadius: 25,
-            buttonColor: roomMatched && occupancyMatched
+            buttonColor: roomMatched &&
+                    occupancyMatched &&
+                    _occupancyController.text.isNotEmpty
                 ? ColorConstants.red
                 : Colors.grey,
             fontSize: AppConstants.fontRequestButtonMaximizedAccepted,
             height: 45,
             width: 100,
             margin: const EdgeInsets.symmetric(horizontal: 5),
-            handleTap: () => roomMatched && occupancyMatched
+            handleTap: () => roomMatched &&
+                    occupancyMatched &&
+                    _occupancyController.text.isNotEmpty
                 ? _onSubmit(
                     context,
                     _roomNumberController.text,
