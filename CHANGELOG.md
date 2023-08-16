@@ -1,3 +1,7 @@
+## 1.0.9
+
+- `occupancy matched check`
+
 ## 1.0.8
 
 - `helen bed component`

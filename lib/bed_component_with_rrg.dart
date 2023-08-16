@@ -58,11 +58,13 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
         setState(() {
           roomMatched = true;
         });
-        if (room.patientCount! > int.parse(_occupancyController.text)) {
+        if (_occupancyController.text.isNotEmpty &&
+            room.patientCount! > int.parse(_occupancyController.text)) {
           final List possibleBeds = List.generate(
               room.patientCount ?? 1, (index) => (index + 1).toString());
 
-          if (possibleBeds.contains(_occupancyController.text)) {
+          if (_occupancyController.text.isNotEmpty &&
+              possibleBeds.contains(_occupancyController.text)) {
             occupancyMatched = true;
             rrg = room.rrg ?? '';
           }
