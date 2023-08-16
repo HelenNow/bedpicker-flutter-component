@@ -1,7 +1,7 @@
 name: bedcomponent
 description: Helen Now
 homepage: https://github.com/mkaraki-helen/bed-component
-version: 1.0.5
+version: 1.0.7
 
 environment:
   sdk: '>=3.0.6 <4.0.0'
