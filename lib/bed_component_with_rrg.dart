@@ -133,6 +133,9 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
             occupancyController: _occupancyController,
             roomNumberController: _roomNumberController,
             onPinCodeChanged: _checkPinCode,
+            setNoOccupancy: () => setState(() {
+              _occupancyController.text = '';
+            }),
             beds: widget.beds ?? [],
           ),
           const SizedBox(height: 18),

@@ -8,6 +8,7 @@ class RoomAndOccupancyWidget extends StatefulWidget {
   final Function onPinCodeChanged;
   final List<Bed>? beds;
   final FocusNode focusNode;
+  final Function? setNoOccupancy;
 
   const RoomAndOccupancyWidget({
     required this.roomNumberController,
@@ -15,6 +16,7 @@ class RoomAndOccupancyWidget extends StatefulWidget {
     required this.onPinCodeChanged,
     required this.focusNode,
     required this.beds,
+    this.setNoOccupancy,
     Key? key,
   }) : super(key: key);
 
@@ -120,6 +122,8 @@ class _RoomAndOccupancyWidgetState extends State<RoomAndOccupancyWidget> {
                         error = '';
                       });
                     }
+                  } else {
+                    if (widget.setNoOccupancy != null) widget.setNoOccupancy!();
                   }
                 },
               ),

@@ -1,7 +1,18 @@
+## 1.0.9
+
+- `helen bed component`
+- `occupancy check`
+
+## 1.0.9
+
+- `helen bed component`
+- `occupancy check`
+
 ## 1.0.8
 
 - `helen bed component`
 - `occupancy check`
+
 ## 1.0.7
 
 - `helen bed component`
