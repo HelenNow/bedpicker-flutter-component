@@ -23,6 +23,6 @@ jobs:
         - name: Publish
           uses: k-paxian/dart-package-publisher@v1.5.1
           with:
-            credentialJson: ${{ secrets.pubdevsecret }}
+            credentialJson: ${{ secrets.PUBDEV_SECRET }}
             flutter: true
             skipTests: true
