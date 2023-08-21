@@ -20,4 +20,9 @@ jobs:
           with:
             channel: 'stable'  
         - run: flutter pub get
-        - run: flutter pub publish --force
+        - name: Publish
+          uses: k-paxian/dart-package-publisher@v1.5.1
+          with:
+            credentialJson: ${{ secrets.CREDENTIAL_JSON }}
+            flutter: true
+            skipTests: true
