@@ -5,7 +5,7 @@ import 'package:bedcomponent/room.dart';
 import 'package:bedcomponent/roommodel.dart';
 import 'package:flutter/material.dart';
 
-Future<Result> showBedComponentWithRRG({
+Future<Result?> showBedComponentWithRRG({
   required BuildContext context,
   List<Room>? rooms,
   List<Bed>? beds,
