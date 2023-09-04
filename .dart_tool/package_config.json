@@ -93,7 +93,7 @@
     },
     {
       "name": "pin_code_fields",
-      "rootUri": "file:///Users/marwakaraki/.pub-cache/hosted/pub.dev/pin_code_fields-7.4.0",
+      "rootUri": "file:///Users/marwakaraki/.pub-cache/hosted/pub.dev/pin_code_fields-8.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -158,7 +158,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-08-23T18:26:13.982436Z",
+  "generated": "2023-09-04T08:41:42.388108Z",
   "generator": "pub",
   "generatorVersion": "3.1.0"
 }

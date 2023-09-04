@@ -1,3 +1,7 @@
+## 1.0.16
+
+- `helen bed component`
+- `upgrade dependencies`
 ## 1.0.15
 
 - `helen bed component`
