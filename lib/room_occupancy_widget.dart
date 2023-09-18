@@ -9,6 +9,7 @@ class RoomAndOccupancyWidget extends StatefulWidget {
   final List<Bed>? beds;
   final FocusNode focusNode;
   final Function? setNoOccupancy;
+  final Function? dispose;
 
   const RoomAndOccupancyWidget({
     required this.roomNumberController,
@@ -16,6 +17,7 @@ class RoomAndOccupancyWidget extends StatefulWidget {
     required this.onPinCodeChanged,
     required this.focusNode,
     required this.beds,
+    this.dispose,
     this.setNoOccupancy,
     Key? key,
   }) : super(key: key);
@@ -25,6 +27,12 @@ class RoomAndOccupancyWidget extends StatefulWidget {
 }
 
 class _RoomAndOccupancyWidgetState extends State<RoomAndOccupancyWidget> {
+  @override
+  void dispose() {
+    if (widget.dispose != null) widget.dispose!();
+    super.dispose();
+  }
+
   int? maxOccupancy;
   String error = '';
   @override

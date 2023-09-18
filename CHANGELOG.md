@@ -1,3 +1,6 @@
+## 1.0.17
+
+- `add a dispose`
 ## 1.0.16
 
 - `helen bed component`

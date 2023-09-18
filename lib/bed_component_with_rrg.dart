@@ -10,10 +10,12 @@ import 'package:flutter/material.dart';
 class ChooseBedDialogRRG extends StatefulWidget {
   final List<Bed>? beds;
   final List<Room>? rooms;
+  final Function? widgetDispose;
   const ChooseBedDialogRRG({
     Key? key,
     this.beds,
     this.rooms,
+    this.widgetDispose,
   }) : super(key: key);
 
   @override
@@ -41,6 +43,8 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
   @override
   void dispose() {
     _roomNumberController.removeListener(_updateOccupancy);
+    _occupancyController.dispose();
+    _roomNumberController.dispose();
     super.dispose();
   }
 
@@ -133,6 +137,7 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
             occupancyController: _occupancyController,
             roomNumberController: _roomNumberController,
             onPinCodeChanged: _checkPinCode,
+            dispose: widget.widgetDispose,
             setNoOccupancy: () => setState(() {
               _occupancyController.text = '';
             }),
