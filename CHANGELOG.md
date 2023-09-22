@@ -1,3 +1,6 @@
+## 1.0.18
+
+- `fix occupancy`
 ## 1.0.17
 
 - `add a dispose`

@@ -31,9 +31,14 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
 
   void _updateOccupancy() {
     final String roomNumber = _roomNumberController.text;
-    final bool roomExists = widget.rooms!.any((room) =>
-        room.roomNumber == roomNumber && (room.patientCount ?? 1) >= 1);
-    if (roomExists) {
+    final bool roomExists =
+        widget.rooms!.any((room) => room.roomNumber == roomNumber);
+    final count = widget.rooms!
+            .firstWhere((room) => room.roomNumber == roomNumber)
+            .patientCount ??
+        1;
+    final bool onebed = count == 1;
+    if (roomExists && onebed) {
       _occupancyController.text = '1';
     } else {
       _occupancyController.text = '';
