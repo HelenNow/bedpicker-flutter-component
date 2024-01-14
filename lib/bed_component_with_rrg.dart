@@ -2,6 +2,7 @@ import 'package:bedcomponent/app_constants.dart';
 import 'package:bedcomponent/bed.dart';
 import 'package:bedcomponent/color_constants.dart';
 import 'package:bedcomponent/general_button.dart';
+import 'package:bedcomponent/gradient_button.dart';
 import 'package:bedcomponent/room.dart';
 import 'package:bedcomponent/room_occupancy_widget.dart';
 import 'package:bedcomponent/screen_dialog.dart';
@@ -11,9 +12,11 @@ class ChooseBedDialogRRG extends StatefulWidget {
   final List<Bed>? beds;
   final List<Room>? rooms;
   final Function? widgetDispose;
+  final bool? newDesignSubmit;
   const ChooseBedDialogRRG({
     Key? key,
     this.beds,
+    this.newDesignSubmit = false,
     this.rooms,
     this.widgetDispose,
   }) : super(key: key);
@@ -134,7 +137,9 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
       ),
       borderRadius: 12,
       content: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: widget.newDesignSubmit ?? false
+            ? CrossAxisAlignment.center
+            : CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           RoomAndOccupancyWidget(
@@ -149,27 +154,45 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
             beds: widget.beds ?? [],
           ),
           const SizedBox(height: 18),
-          GeneralButton(
-            buttonText: 'Submit',
-            borderRadius: 25,
-            buttonColor: roomMatched &&
-                    occupancyMatched &&
-                    _occupancyController.text.isNotEmpty
-                ? ColorConstants.red
-                : Colors.grey,
-            fontSize: AppConstants.fontRequestButtonMaximizedAccepted,
-            height: 45,
-            width: 100,
-            margin: const EdgeInsets.symmetric(horizontal: 5),
-            handleTap: () => roomMatched &&
-                    occupancyMatched &&
-                    _occupancyController.text.isNotEmpty
-                ? _onSubmit(
-                    context,
-                    _roomNumberController.text,
-                  )
-                : {},
-          ),
+          widget.newDesignSubmit ?? false
+              ? GradientButton(
+                  height: 45,
+                  buttonText: 'Submit',
+                  isDisabled: !(roomMatched &&
+                      occupancyMatched &&
+                      _occupancyController.text.isNotEmpty),
+                  handleTap: () => roomMatched &&
+                          occupancyMatched &&
+                          _occupancyController.text.isNotEmpty
+                      ? _onSubmit(
+                          context,
+                          _roomNumberController.text,
+                        )
+                      : {},
+                  margin: const EdgeInsets.symmetric(horizontal: 5),
+                  width: 100,
+                )
+              : GeneralButton(
+                  buttonText: 'Submit',
+                  borderRadius: 25,
+                  buttonColor: roomMatched &&
+                          occupancyMatched &&
+                          _occupancyController.text.isNotEmpty
+                      ? ColorConstants.red
+                      : Colors.grey,
+                  fontSize: AppConstants.fontRequestButtonMaximizedAccepted,
+                  height: 45,
+                  width: 100,
+                  margin: const EdgeInsets.symmetric(horizontal: 5),
+                  handleTap: () => roomMatched &&
+                          occupancyMatched &&
+                          _occupancyController.text.isNotEmpty
+                      ? _onSubmit(
+                          context,
+                          _roomNumberController.text,
+                        )
+                      : {},
+                ),
         ],
       ),
     );

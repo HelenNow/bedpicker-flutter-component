@@ -13,6 +13,8 @@ class ColorConstants {
 
   /// A: 255, R: 175, G: 175, B: 175.
   static const Color greyLight = Color.fromARGB(255, 175, 175, 175);
+  static const Color buttonpurple = Color.fromRGBO(106, 52, 246, 1);
+  static const Color buttonpink = Color.fromRGBO(242, 128, 224, 1);
 
   /// A: 255, R: 225, G: 225, B: 225.
   static const Color greyLightest = Color.fromARGB(255, 225, 225, 225);
