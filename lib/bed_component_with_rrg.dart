@@ -137,6 +137,7 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
         vertical: 15,
       ),
       borderRadius: 12,
+      titleTextMargin: const EdgeInsets.only(top: 50),
       content: Column(
         crossAxisAlignment: widget.newDesignSubmit ?? false
             ? CrossAxisAlignment.center
@@ -157,7 +158,9 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
           const SizedBox(height: 18),
           widget.newDesignSubmit ?? false
               ? GradientButton(
+                  width: 150,
                   height: 45,
+                  fontWeight: FontWeight.w500,
                   buttonText: 'Submit',
                   isDisabled: !(roomMatched &&
                       occupancyMatched &&
@@ -171,7 +174,6 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
                         )
                       : {},
                   margin: const EdgeInsets.symmetric(horizontal: 5),
-                  width: 100,
                 )
               : GeneralButton(
                   buttonText: 'Submit',
@@ -194,6 +196,7 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
                         )
                       : {},
                 ),
+          const SizedBox(height: 18),
         ],
       ),
     );
