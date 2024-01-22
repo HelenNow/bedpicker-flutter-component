@@ -7,6 +7,7 @@ class RoomAndOccupancyWidget extends StatefulWidget {
   final TextEditingController occupancyController;
   final Function onPinCodeChanged;
   final List<Bed>? beds;
+  final bool? newDesign;
   final FocusNode focusNode;
   final Function? setNoOccupancy;
   final Function? dispose;
@@ -17,6 +18,7 @@ class RoomAndOccupancyWidget extends StatefulWidget {
     required this.onPinCodeChanged,
     required this.focusNode,
     required this.beds,
+    this.newDesign = false,
     this.dispose,
     this.setNoOccupancy,
     Key? key,
@@ -51,13 +53,23 @@ class _RoomAndOccupancyWidgetState extends State<RoomAndOccupancyWidget> {
                 animationType: AnimationType.fade,
                 pinTheme: PinTheme(
                   selectedColor: Colors.black,
-                  inactiveColor: Colors.white,
-                  inactiveFillColor: Colors.white,
-                  selectedFillColor: Colors.white,
-                  activeColor: Colors.white,
+                  inactiveColor: widget.newDesign ?? false
+                      ? Colors.white
+                      : Colors.grey.shade300,
+                  inactiveFillColor: widget.newDesign ?? false
+                      ? Colors.white
+                      : Colors.grey.shade300,
+                  selectedFillColor: widget.newDesign ?? false
+                      ? Colors.white
+                      : Colors.grey.shade300,
+                  activeColor: widget.newDesign ?? false
+                      ? Colors.white
+                      : Colors.grey.shade300,
                   shape: PinCodeFieldShape.box,
                   fieldWidth: 35,
-                  activeFillColor: Colors.grey.shade300,
+                  activeFillColor: widget.newDesign ?? false
+                      ? Colors.white
+                      : Colors.grey.shade300,
                 ),
                 cursorColor: Colors.black,
                 keyboardType: TextInputType.number,
@@ -100,13 +112,23 @@ class _RoomAndOccupancyWidgetState extends State<RoomAndOccupancyWidget> {
                 animationType: AnimationType.fade,
                 pinTheme: PinTheme(
                   selectedColor: Colors.black,
-                  inactiveColor: Colors.grey.shade300,
-                  inactiveFillColor: Colors.grey.shade300,
-                  selectedFillColor: Colors.grey.shade300,
-                  activeColor: Colors.grey.shade300,
+                  inactiveColor: widget.newDesign ?? false
+                      ? Colors.white
+                      : Colors.grey.shade300,
+                  inactiveFillColor: widget.newDesign ?? false
+                      ? Colors.white
+                      : Colors.grey.shade300,
+                  selectedFillColor: widget.newDesign ?? false
+                      ? Colors.white
+                      : Colors.grey.shade300,
+                  activeColor: widget.newDesign ?? false
+                      ? Colors.white
+                      : Colors.grey.shade300,
                   shape: PinCodeFieldShape.box,
                   fieldWidth: 35,
-                  activeFillColor: Colors.grey.shade300,
+                  activeFillColor: widget.newDesign ?? false
+                      ? Colors.white
+                      : Colors.grey.shade300,
                 ),
                 cursorColor: Colors.black,
                 keyboardType: TextInputType.number,

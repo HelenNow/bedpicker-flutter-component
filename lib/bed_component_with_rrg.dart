@@ -146,6 +146,7 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
         children: <Widget>[
           RoomAndOccupancyWidget(
             focusNode: focusNode,
+            newDesign: true,
             occupancyController: _occupancyController,
             roomNumberController: _roomNumberController,
             onPinCodeChanged: _checkPinCode,
