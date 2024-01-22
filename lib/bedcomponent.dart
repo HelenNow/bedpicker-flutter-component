@@ -1,6 +1,7 @@
 import 'package:bedcomponent/bed.dart';
 import 'package:bedcomponent/bed_component_with_rrg.dart';
 import 'package:bedcomponent/bed_component_without_rrg.dart';
+import 'package:bedcomponent/color_constants.dart';
 import 'package:bedcomponent/room.dart';
 import 'package:bedcomponent/roommodel.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ Future<Result?> showBedComponentWithRRG({
   bool? newDesignSubmit = false,
 }) async {
   final result = await showDialog(
+    barrierColor: ColorConstants.white.withOpacity(0.4),
     context: context,
     builder: (BuildContext context) => ChooseBedDialogRRG(
       newDesignSubmit: true,

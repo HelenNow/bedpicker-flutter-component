@@ -5,7 +5,7 @@ import 'package:bedcomponent/general_button.dart';
 import 'package:bedcomponent/gradient_button.dart';
 import 'package:bedcomponent/room.dart';
 import 'package:bedcomponent/room_occupancy_widget.dart';
-import 'package:bedcomponent/screen_dialog.dart';
+import 'package:bedcomponent/screendialogwithrrg.dart';
 import 'package:flutter/material.dart';
 
 class ChooseBedDialogRRG extends StatefulWidget {
@@ -127,7 +127,8 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenDialog(
+    return ScreenDialogWithRRg(
+      color: ColorConstants.beige,
       cancelButtonColor: ColorConstants.purpleDark,
       title: 'Choose room',
       titleAlignment: Alignment.center,

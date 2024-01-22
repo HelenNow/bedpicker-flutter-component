@@ -10,6 +10,7 @@ class ColorConstants {
 
   /// A: 255, R: 144, G: 144, B: 144.
   static const Color greyDark = Color.fromARGB(255, 144, 144, 144);
+  static const Color mainPurple = Color.fromRGBO(74, 18, 99, 1);
 
   /// A: 255, R: 175, G: 175, B: 175.
   static const Color greyLight = Color.fromARGB(255, 175, 175, 175);
@@ -72,6 +73,7 @@ class ColorConstants {
 
   /// HEX: 0x00FBDAD5, opacity: 0.9.
   static final Color dialogColor = const Color(0x00FBDAD5).withOpacity(0.9);
+  static const Color beige = Color.fromRGBO(255, 243, 232, 1);
 
   //
 
