@@ -13,11 +13,13 @@ class ChooseBedDialogRRG extends StatefulWidget {
   final List<Room>? rooms;
   final Function? widgetDispose;
   final bool? newDesignSubmit;
+  final String? title;
   const ChooseBedDialogRRG({
     Key? key,
     this.beds,
     this.newDesignSubmit = false,
     this.rooms,
+    this.title,
     this.widgetDispose,
   }) : super(key: key);
 
@@ -130,7 +132,7 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
     return ScreenDialogWithRRg(
       color: ColorConstants.beige,
       cancelButtonColor: ColorConstants.purpleDark,
-      title: 'Choose room',
+      title: widget.title ?? 'Choose room',
       titleAlignment: Alignment.center,
       contentPadding: const EdgeInsets.symmetric(
         horizontal: 24,

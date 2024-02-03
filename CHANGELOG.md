@@ -1,44 +1,55 @@
+## 1.0.23
+
+- `change title`
+
 ## 1.0.22
 
 - `change design`
+
 ## 1.0.21
 
 - `change design`
+
 ## 1.0.20
 
 - `change design`
+
 ## 1.0.19
 
 - `change design`
+
 ## 1.0.18
 
 - `fix occupancy`
+
 ## 1.0.17
 
 - `add a dispose`
+
 ## 1.0.16
 
 - `helen bed component`
 - `upgrade dependencies`
+
 ## 1.0.15
 
 - `helen bed component`
 - `test`
+
 ## 1.0.14
 
 - `helen bed component`
 - `test`
+
 ## 1.0.13
 
 - `helen bed component`
 - `github actions`
 
-
 ## 1.0.11
 
 - `helen bed component`
 - `github actions`
-
 
 ## 1.0.10
 
