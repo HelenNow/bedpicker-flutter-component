@@ -12,10 +12,11 @@ Future<Result?> showBedComponentWithRRG({
   List<Bed>? beds,
   String? title,
   TextStyle? occupancyStyle,
+  Color? barrierColor,
   bool? newDesignSubmit = false,
 }) async {
   final result = await showDialog(
-    barrierColor: ColorConstants.white.withOpacity(0.4),
+    barrierColor: barrierColor ?? ColorConstants.white.withOpacity(0.4),
     context: context,
     builder: (BuildContext context) => ChooseBedDialogRRG(
       newDesignSubmit: true,

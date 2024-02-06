@@ -1,3 +1,7 @@
+## 1.0.25
+
+- `barrier color`
+
 ## 1.0.24
 
 - `occupancy style`
