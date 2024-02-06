@@ -11,6 +11,7 @@ Future<Result?> showBedComponentWithRRG({
   List<Room>? rooms,
   List<Bed>? beds,
   String? title,
+  TextStyle? occupancyStyle,
   bool? newDesignSubmit = false,
 }) async {
   final result = await showDialog(
@@ -19,6 +20,7 @@ Future<Result?> showBedComponentWithRRG({
     builder: (BuildContext context) => ChooseBedDialogRRG(
       newDesignSubmit: true,
       rooms: rooms,
+      occupancyStyle: occupancyStyle,
       title: title,
       beds: beds,
     ),

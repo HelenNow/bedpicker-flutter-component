@@ -1,3 +1,7 @@
+## 1.0.24
+
+- `occupancy style`
+
 ## 1.0.23
 
 - `change title`

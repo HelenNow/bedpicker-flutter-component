@@ -11,6 +11,7 @@ class RoomAndOccupancyWidget extends StatefulWidget {
   final FocusNode focusNode;
   final Function? setNoOccupancy;
   final Function? dispose;
+  final TextStyle? occupancyStyle;
 
   const RoomAndOccupancyWidget({
     required this.roomNumberController,
@@ -18,6 +19,7 @@ class RoomAndOccupancyWidget extends StatefulWidget {
     required this.onPinCodeChanged,
     required this.focusNode,
     required this.beds,
+    this.occupancyStyle,
     this.newDesign = false,
     this.dispose,
     this.setNoOccupancy,
@@ -160,7 +162,8 @@ class _RoomAndOccupancyWidgetState extends State<RoomAndOccupancyWidget> {
             ),
           ],
         ),
-        if (maxOccupancy != null) Text('Occupancy - $maxOccupancy'),
+        if (maxOccupancy != null)
+          Text('Occupancy - $maxOccupancy', style: widget.occupancyStyle),
         if (error.isNotEmpty)
           Text(
             error,

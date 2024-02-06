@@ -14,12 +14,14 @@ class ChooseBedDialogRRG extends StatefulWidget {
   final Function? widgetDispose;
   final bool? newDesignSubmit;
   final String? title;
+  final TextStyle? occupancyStyle;
   const ChooseBedDialogRRG({
     Key? key,
     this.beds,
     this.newDesignSubmit = false,
     this.rooms,
     this.title,
+    this.occupancyStyle,
     this.widgetDispose,
   }) : super(key: key);
 
@@ -149,6 +151,7 @@ class _ChooseBedDialogRRGState extends State<ChooseBedDialogRRG> {
           RoomAndOccupancyWidget(
             focusNode: focusNode,
             newDesign: true,
+            occupancyStyle: widget.occupancyStyle,
             occupancyController: _occupancyController,
             roomNumberController: _roomNumberController,
             onPinCodeChanged: _checkPinCode,
